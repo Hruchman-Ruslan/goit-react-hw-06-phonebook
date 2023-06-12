@@ -8,7 +8,6 @@ export const ContactList = () => {
   const { contacts, filter, deleteContact } = useContacts();
 
   const getFilterName = () => {
-    if (!filter) return contacts;
     const normalisedFilter = filter.toLowerCase();
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalisedFilter)

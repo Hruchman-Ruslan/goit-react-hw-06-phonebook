@@ -2,7 +2,6 @@ import { Formik } from 'formik';
 import { object, string } from 'yup';
 
 import { FormikForm, Label, FormikInput, Button, Error } from './Form.styled';
-import { nanoid } from '@reduxjs/toolkit';
 import { useContacts } from 'redux/contacts/useContacts';
 
 const phoneRegExp =
@@ -34,7 +33,7 @@ export const FormContact = () => {
       alert(`${values.name} is already in contacts.`);
       return;
     }
-    addContact({ ...values, id: nanoid() });
+    addContact({ ...values });
     resetForm();
   };
 
